@@ -1,0 +1,63 @@
+class MyList:
+    def __init__(self):
+        # Inicializa un diccionario vacío para almacenar los elementos y un contador de longitud en 0.
+        self.data = {}
+        self.length = 0
+
+    def append(self, item):
+        # Agrega un elemento al final de la lista, usando la longitud actual como clave.
+        self.data[self.length] = item
+        self.length += 1
+
+    def pop(self):
+        # Elimina y devuelve el último elemento de la lista.
+        if self.length == 0:
+            return None
+        last_item = self.data[self.length - 1]
+        del self.data[self.length - 1]
+        self.length -= 1
+        return last_item
+
+    def shift(self):
+        # Elimina y devuelve el primer elemento de la lista.
+        if self.length == 0:
+            return None
+        first_item = self.data[0]
+        # Desplaza los elementos restantes hacia la izquierda.
+        for i in range(1, self.length):
+            self.data[i - 1] = self.data[i]
+        del self.data[self.length - 1]
+        self.length -= 1
+        return first_item
+
+    def unshift(self, item):
+        # Agrega un elemento al principio de la lista.
+        # Desplaza los elementos existentes hacia la derecha para hacer espacio.
+        for i in range(self.length, 0, -1):
+            self.data[i] = self.data[i - 1]
+        self.data[0] = item
+        self.length += 1
+
+    def map(self, func):
+        # Crea una nueva lista aplicando una función a cada elemento de la lista actual.
+        new_array = MyList()
+        for i in range(self.length):
+            new_array.append(func(self.data[i]))
+        return new_array
+
+    def filter(self, func):
+        # Crea una nueva lista con los elementos que cumplen una condición dada.
+        new_array = MyList()
+        for i in range(self.length):
+            if func(self.data[i]):
+                new_array.append(self.data[i])
+        return new_array
+
+    def join(self, character=","):
+        # Convierte la lista en una cadena, uniendo los elementos con un carácter dado.
+        joined_string = ""
+        for i in range(self.length):
+            joined_string += str(self.data[i])
+            if i != self.length - 1:
+                joined_string += character
+        return joined_string

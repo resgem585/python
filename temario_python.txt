@@ -1,0 +1,36 @@
+tuplas- variables de entorno
+
+
+Data lakes
+
+hadoop - Sistema de archivos para conjuntos de datos.
+
+spark - 
+
+databrics - 
+
+leet code - 
+
+
+https://www.geeksforgeeks.org/python-interview-questions/
+Kaliman Tole16:22
+Pasos git prueba técnica:
+
+1. Hacer fork
+2. Clonar
+3. upstream repo remoto
+4. Crear rama feature
+5. Hacer PR 
+6. Hacer merge a master
+
+kalimantole@gmail.com
+
+
+Aterrizar conceptos -
+
+Estructuras de datos - 
+Polimorfismo - 
+
+Hazme un codigo en python en poo y sin poo - Clases, self, etc.
+
+Pruebas unitarias - Una leida https://www.youtube.com/watch?v=tp_jttT9jXI
